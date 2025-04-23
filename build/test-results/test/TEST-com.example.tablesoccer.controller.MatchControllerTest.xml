@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tablesoccer.controller.MatchControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-04-23T10:54:11" hostname="ROGER-LENOVO" time="0.204">
+  <properties/>
+  <testcase name="testRecordMatchError()" classname="com.example.tablesoccer.controller.MatchControllerTest" time="0.077"/>
+  <testcase name="testGetPlayerMatchesError()" classname="com.example.tablesoccer.controller.MatchControllerTest" time="0.008"/>
+  <testcase name="testRecordMatch()" classname="com.example.tablesoccer.controller.MatchControllerTest" time="0.009"/>
+  <testcase name="testGetPlayerMatches()" classname="com.example.tablesoccer.controller.MatchControllerTest" time="0.103"/>
+  <system-out><![CDATA[2025-04-23T17:54:10.858+07:00  INFO 33816 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.tablesoccer.controller.MatchControllerTest]: MatchControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-04-23T17:54:10.876+07:00  INFO 33816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.tablesoccer.TableSoccerApplication for test class com.example.tablesoccer.controller.MatchControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2025-04-23T17:54:10.994+07:00  INFO 33816 --- [    Test worker] c.e.t.controller.MatchControllerTest     : Starting MatchControllerTest using Java 21 with PID 33816 (started by RogerBui in C:\SMG\_playground\table-soccer-ledger\try1)
+2025-04-23T17:54:10.994+07:00  INFO 33816 --- [    Test worker] c.e.t.controller.MatchControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2025-04-23T17:54:11.741+07:00  INFO 33816 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-04-23T17:54:11.742+07:00  INFO 33816 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-04-23T17:54:11.743+07:00  INFO 33816 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-04-23T17:54:11.750+07:00  INFO 33816 --- [    Test worker] c.e.t.controller.MatchControllerTest     : Started MatchControllerTest in 0.86 seconds (process running for 11.826)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

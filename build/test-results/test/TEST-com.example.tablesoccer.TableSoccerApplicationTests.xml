@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tablesoccer.TableSoccerApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-23T10:54:06" hostname="ROGER-LENOVO" time="1.457">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.tablesoccer.TableSoccerApplicationTests" time="1.457"/>
+  <system-out><![CDATA[17:54:01.917 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.tablesoccer.TableSoccerApplicationTests]: TableSoccerApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:54:02.117 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.tablesoccer.TableSoccerApplication for test class com.example.tablesoccer.TableSoccerApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2025-04-23T17:54:03.164+07:00  INFO 33816 --- [    Test worker] c.e.t.TableSoccerApplicationTests        : Starting TableSoccerApplicationTests using Java 21 with PID 33816 (started by RogerBui in C:\SMG\_playground\table-soccer-ledger\try1)
+2025-04-23T17:54:03.164+07:00  INFO 33816 --- [    Test worker] c.e.t.TableSoccerApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2025-04-23T17:54:06.189+07:00  INFO 33816 --- [    Test worker] c.e.t.TableSoccerApplicationTests        : Started TableSoccerApplicationTests in 3.693 seconds (process running for 6.273)
+Running basic test
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\RogerBui\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.4\3bf5ac1104554908cc623e40e58a00be37c35f36\byte-buddy-agent-1.14.4.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

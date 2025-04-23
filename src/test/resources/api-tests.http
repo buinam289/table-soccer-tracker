@@ -1,0 +1,59 @@
+### ============ FULL SYNTHESIZED CHECK ============
+
+### 1. Create 4 double matches for 3 people
+
+### Match 1: A and B vs C and D (A and B win)
+POST http://localhost:8080/matches
+Content-Type: application/json
+
+{
+  "team1": ["A", "B"],
+  "team2": ["C", "D"],
+  "winner": "team1"
+}
+
+### Match 2: A and C vs B and D (B and D win)
+POST http://localhost:8080/matches
+Content-Type: application/json
+
+{
+  "team1": ["A", "C"],
+  "team2": ["B", "D"],
+  "winner": "team2"
+}
+
+### Match 3: A and D vs B and C (A and D win)
+POST http://localhost:8080/matches
+Content-Type: application/json
+
+{
+  "team1": ["A", "D"],
+  "team2": ["B", "C"],
+  "winner": "team1"
+}
+
+### Match 4: A and B vs C and D (C and D win)
+POST http://localhost:8080/matches
+Content-Type: application/json
+
+{
+  "team1": ["A", "B"],
+  "team2": ["C", "D"],
+  "winner": "team2"
+}
+
+### 2. Create 2 debt payments
+
+### Payment 1: B pays A
+POST http://localhost:8080/debts/pay
+Content-Type: application/json
+
+{
+  "from": "C",
+  "to": "D",
+  "amount": 1
+}
+
+### 3. Show all debts
+GET http://localhost:8080/debts/all
+Accept: application/json

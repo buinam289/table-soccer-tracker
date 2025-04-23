@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.tablesoccer.service.DebtServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-04-23T10:54:12" hostname="ROGER-LENOVO" time="0.283">
+  <properties/>
+  <testcase name="testGetPlayerDebts()" classname="com.example.tablesoccer.service.DebtServiceTest" time="0.223"/>
+  <testcase name="testRecordPayment()" classname="com.example.tablesoccer.service.DebtServiceTest" time="0.051"/>
+  <testcase name="testRecordPaymentFullAmount()" classname="com.example.tablesoccer.service.DebtServiceTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

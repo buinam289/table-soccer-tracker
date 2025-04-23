@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DebtControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DebtControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.tablesoccer.controller.html">com.example.tablesoccer.controller</a> &gt; DebtControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.944s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testGetAllDebts()</td>
+<td class="success">0.012s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetPlayerDebts()</td>
+<td class="success">0.443s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRecordPayment()</td>
+<td class="success">0.026s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRecordPaymentInvalidRequest()</td>
+<td class="success">1.463s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-04-23T17:54:07.702+07:00  INFO 33816 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.tablesoccer.controller.DebtControllerTest]: DebtControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-04-23T17:54:07.737+07:00  INFO 33816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.tablesoccer.TableSoccerApplication for test class com.example.tablesoccer.controller.DebtControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2025-04-23T17:54:07.792+07:00  INFO 33816 --- [    Test worker] c.e.t.controller.DebtControllerTest      : Starting DebtControllerTest using Java 21 with PID 33816 (started by RogerBui in C:\SMG\_playground\table-soccer-ledger\try1)
+2025-04-23T17:54:07.792+07:00  INFO 33816 --- [    Test worker] c.e.t.controller.DebtControllerTest      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-04-23T17:54:08.806+07:00  INFO 33816 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-04-23T17:54:08.806+07:00  INFO 33816 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-04-23T17:54:08.816+07:00  INFO 33816 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-04-23T17:54:08.849+07:00  INFO 33816 --- [    Test worker] c.e.t.controller.DebtControllerTest      : Started DebtControllerTest in 1.105 seconds (process running for 8.924)
+2025-04-23T17:54:10.252+07:00  WARN 33816 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity&lt;java.lang.Void&gt; com.example.tablesoccer.controller.DebtController.recordPayment(com.example.tablesoccer.model.PaymentRequest) with 3 errors: [Field error in object 'paymentRequest' on field 'to': rejected value [null]; codes [NotBlank.paymentRequest.to,NotBlank.to,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [paymentRequest.to,to]; arguments []; default message [to]]; default message [To player is required]] [Field error in object 'paymentRequest' on field 'amount': rejected value [null]; codes [NotNull.paymentRequest.amount,NotNull.amount,NotNull.java.lang.Integer,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [paymentRequest.amount,amount]; arguments []; default message [amount]]; default message [Amount is required]] [Field error in object 'paymentRequest' on field 'from': rejected value [null]; codes [NotBlank.paymentRequest.from,NotBlank.from,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [paymentRequest.from,from]; arguments []; default message [from]]; default message [From player is required]] ]
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at Apr 23, 2025, 5:54:12 PM</p>
+</div>
+</div>
+</body>
+</html>
