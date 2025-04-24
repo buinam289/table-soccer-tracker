@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.tablesoccer.repository.DebtLedgerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-04-23T10:54:11" hostname="ROGER-LENOVO" time="0.102">
-  <properties/>
-  <testcase name="testDebtConsolidation()" classname="com.example.tablesoccer.repository.DebtLedgerTest" time="0.083"/>
-  <testcase name="testSaveAndGetDebts()" classname="com.example.tablesoccer.repository.DebtLedgerTest" time="0.017"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

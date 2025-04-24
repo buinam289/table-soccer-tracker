@@ -1,0 +1,10 @@
+# IntelliJ IDEA files
+.idea/
+
+# Gradle files
+.gradle/
+build/
+out/
+
+# Gradle wrapper is an exception - it should be committed
+!gradle/wrapper/
