@@ -5,6 +5,7 @@ import com.example.tablesoccer.model.Match;
 import com.example.tablesoccer.model.MatchRequest;
 import com.example.tablesoccer.repository.DebtLedger;
 import com.example.tablesoccer.repository.MatchRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,6 +20,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,14 +35,19 @@ class MatchServiceTest {
     @Mock
     private MatchRepository matchRepository;
     
+    @Mock
+    private LlmService llmService;
+    
     @Captor
     private ArgumentCaptor<Match> matchCaptor;
     
     private MatchService matchService;
+    private ObjectMapper objectMapper;
     
     @BeforeEach
     void setUp() {
-        matchService = new MatchService(debtLedger, debtService, matchRepository);
+        objectMapper = new ObjectMapper();
+        matchService = new MatchService(debtLedger, debtService, matchRepository, llmService, objectMapper);
     }
     
     @Test
@@ -65,6 +73,35 @@ class MatchServiceTest {
         assertEquals(request.getWinner(), savedMatch.getWinner());
         assertNotNull(savedMatch.getId());
         assertNotNull(savedMatch.getTimestamp());
+        
+        // Verify debts were calculated and saved
+        verify(debtLedger).saveDebts(anyList());
+    }
+    
+    @Test
+    void testRecordMatchFromMessage() throws IOException {
+        // Setup
+        String message = "A and B defeated C and D";
+        String jsonResult = "{\"team1\":[\"A\",\"B\"],\"team2\":[\"C\",\"D\"],\"winner\":\"team1\"}";
+        
+        when(llmService.interpretMessage(message)).thenReturn(jsonResult);
+        when(debtLedger.getAllDebts()).thenReturn(new ArrayList<>());
+        
+        // Execute
+        Match match = matchService.recordMatchFromMessage(message);
+        
+        // Verify LLM service was called
+        verify(llmService).interpretMessage(message);
+        
+        // Verify match was saved
+        verify(matchRepository).saveMatch(any(Match.class));
+        
+        // Assertions for returned match
+        assertEquals(Arrays.asList("A", "B"), match.getTeam1());
+        assertEquals(Arrays.asList("C", "D"), match.getTeam2());
+        assertEquals("team1", match.getWinner());
+        assertNotNull(match.getId());
+        assertNotNull(match.getTimestamp());
         
         // Verify debts were calculated and saved
         verify(debtLedger).saveDebts(anyList());
