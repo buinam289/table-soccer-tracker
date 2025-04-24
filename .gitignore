@@ -29,3 +29,5 @@ application-dev.properties
 
 # Environment variables
 .env
+
+data/
