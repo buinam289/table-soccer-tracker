@@ -30,4 +30,5 @@ application-dev.properties
 # Environment variables
 .env
 
-data/
+data
+data1
