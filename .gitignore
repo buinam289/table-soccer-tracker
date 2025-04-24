@@ -1,5 +1,8 @@
 # IntelliJ IDEA files
 .idea/
+*.iws
+*.iml
+*.ipr
 
 # Gradle files
 .gradle/
@@ -8,3 +11,21 @@ out/
 
 # Gradle wrapper is an exception - it should be committed
 !gradle/wrapper/
+
+# Logs
+logs/
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Maven specific files (nếu dự án có sử dụng Maven)
+target/
+
+# Local configuration file
+application-local.properties
+application-dev.properties
+
+# Environment variables
+.env

@@ -12,6 +12,8 @@ A simple REST API to track coin debts between players after table soccer matches
 - View who owes whom and how much
 - Store all data in a local JSON file
 - View match history for any player
+- Slack integration for recording matches using natural language
+- AI-powered natural language processing for match recording
 
 ---
 
@@ -34,6 +36,14 @@ A simple REST API to track coin debts between players after table soccer matches
 
 5. **View Match History**
    - View all matches a specific player has participated in
+
+6. **Slack Integration**
+   - Record matches directly from Slack using natural language
+   - Example: "A and B defeated C and D" → system records the match and updates debts
+
+7. **Natural Language Processing**
+   - AI-powered parsing of match results from text messages
+   - Support for various phrasings and formats
 
 ---
 
@@ -122,6 +132,28 @@ A simple REST API to track coin debts between players after table soccer matches
 
 ---
 
+### `POST /slack/record-match`
+**Record a match from Slack message**
+
+**Request Body:**
+```json
+{
+  "message": {
+    "text": "A and B defeated C and D"
+  }
+}
+```
+
+**Response Example:**
+```json
+{
+  "response_type": "in_channel",
+  "text": "✅ Match recorded: A and B defeated C and D"
+}
+```
+
+---
+
 ## 🗃️ Data Storage Format
 
 ### Debts (`data/debts.json`)
@@ -169,14 +201,17 @@ table-soccer-ledger/
 │       │   └── com/example/tablesoccer/
 │       │       ├── controller/
 │       │       │   ├── MatchController.java
-│       │       │   └── DebtController.java
+│       │       │   ├── DebtController.java
+│       │       │   └── SlackController.java
 │       │       ├── service/
 │       │       │   ├── MatchService.java
-│       │       │   └── DebtService.java
+│       │       │   ├── DebtService.java
+│       │       │   └── LlmService.java
 │       │       ├── model/
 │       │       │   ├── Match.java
 │       │       │   ├── MatchRequest.java
-│       │       │   └── Debt.java
+│       │       │   ├── Debt.java
+│       │       │   └── SlackRequest.java
 │       │       ├── repository/
 │       │       │   ├── MatchHistory.java
 │       │       │   └── DebtLedger.java
@@ -187,7 +222,7 @@ table-soccer-ledger/
 │   ├── debts.json
 │   └── matches.json
 ├── README.md
-└── pom.xml or build.gradle
+└── build.gradle
 ```
 
 ---
@@ -198,7 +233,9 @@ table-soccer-ledger/
 - Spring Boot
 - Jackson (for JSON serialization)
 - Local file I/O
-- Maven or Gradle
+- Gradle
+- AI Natural Language Processing
+- Slack API integration
 
 ---
 
@@ -207,8 +244,16 @@ table-soccer-ledger/
 ```bash
 git clone <repo-url>
 cd table-soccer-ledger
-./mvnw spring-boot:run
+./gradlew bootRun
 ```
+
+The server will start at `http://localhost:8080`
+
+### Slack Integration Setup
+
+1. Create a Slack App in your Slack workspace
+2. Set up a Slash Command pointing to `/slack/record-match`
+3. Configure your Slack credentials in `application.properties`
 
 ---
 
@@ -218,6 +263,8 @@ cd table-soccer-ledger
 - Login system
 - Persistent database (MongoDB, PostgreSQL, etc.)
 - Match statistics and player rankings
+- Enhanced natural language capabilities
+- Direct integration with table soccer hardware
 
 ---
 
