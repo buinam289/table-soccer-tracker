@@ -9,7 +9,6 @@ RUN ./gradlew build -x test
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
-COPY data/ /app/data/
 
 # Set environment variables
 ENV SPRING_PROFILES_ACTIVE=prod
