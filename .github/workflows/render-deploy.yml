@@ -25,12 +25,21 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
         
+    - name: Extract Docker metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ secrets.DOCKER_HUB_USERNAME }}/table-soccer-ledger
+        tags: |
+          type=raw,value=latest
+          type=sha,format=short
+        
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/table-soccer-ledger:latest
+        tags: ${{ steps.meta.outputs.tags }}
         
     - name: Deploy to Render
       run: curl ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
