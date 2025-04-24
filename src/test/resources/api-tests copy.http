@@ -3,7 +3,7 @@
 ### 1. Create 4 double matches for 3 people
 
 ### Match 1: A and B vs C and D (A and B win)
-POST http://localhost:8080/matches
+POST https://table-soccer-tracker.onrender.com/matches
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 }
 
 ### Match 2: A and C vs B and D (B and D win)
-POST http://localhost:8080/matches
+POST https://table-soccer-tracker.onrender.com/matches
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### Match 3: A and D vs B and C (A and D win)
-POST http://localhost:8080/matches
+POST https://table-soccer-tracker.onrender.com/matches
 Content-Type: application/json
 
 {
@@ -33,7 +33,7 @@ Content-Type: application/json
 }
 
 ### Match 4: A and B vs C and D (C and D win)
-POST http://localhost:8080/matches
+POST https://table-soccer-tracker.onrender.com/matches
 Content-Type: application/json
 
 {
@@ -45,7 +45,7 @@ Content-Type: application/json
 ### 2. Create 2 debt payments
 
 ### Payment 1: B pays A
-POST http://localhost:8080/debts/pay
+POST https://table-soccer-tracker.onrender.com/debts/pay
 Content-Type: application/json
 
 {
@@ -55,10 +55,8 @@ Content-Type: application/json
 }
 
 ### 4. Record a match via Slack endpoint using natural language
-POST http://localhost:8080/slack/record-match
+POST https://table-soccer-tracker.onrender.com/slack/record-match
 Content-Type: application/json
-X-Slack-Request-Timestamp: {{$timestamp}}
-X-Slack-Signature: "v0=b27cee235d5d746fa1b5e8e5553bfc92ccbc98c43f344fdbe3829165d5bc5423"
 
 {
   "message": {
@@ -71,10 +69,9 @@ X-Slack-Signature: "v0=b27cee235d5d746fa1b5e8e5553bfc92ccbc98c43f344fdbe3829165d
     "id": "C789012"
   },
   "type": "message_action",
-  "callback_id": "record_match",
-  "trigger_id": "trigger123"
+  "callback_id": "record_match"
 }
 
 ### 3. Show all debts
-GET http://localhost:8080/debts/all
+GET https://table-soccer-tracker.onrender.com/debts/all
 Accept: application/json
